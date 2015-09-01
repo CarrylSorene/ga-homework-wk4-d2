@@ -14,5 +14,9 @@ require_relative 'spec_helper'
     expect(garage.bike_count).to eq 1
   end
   
-
+  it 'should fix broken bikes' do
+    bike.break
+    bike.fix
+    expect(bike.broken?).to be false
+  end
 end
