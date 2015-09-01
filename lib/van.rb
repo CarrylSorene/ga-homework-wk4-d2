@@ -19,14 +19,17 @@ class Van
   def transport bike
     @bikes << bike
   end
- 
-  def full?
-    bike_count == @capacity 
-  end
 
   def release bike
     @bikes.delete bike
   end
 
-  
+  # def broken_bikes
+  #   @bikes.select {|bike| bike.broken?}
+  # end
+
+  def full?
+    bike_count == @capacity 
+  end
+
 end

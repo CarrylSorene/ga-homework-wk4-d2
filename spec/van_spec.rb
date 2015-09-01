@@ -10,11 +10,12 @@ describe Van do
   let(:bike) { Bike.new }
 
   # it 'should accept broken bikes' do
-  #   van(bike.break)
-  #   expect(van.bike.break).to be true
+  #   broken_bike = Bike.new
+  #   van(broken_bike)
+  #   expect(van.broken_bikes).to eq [broken_bike]
   # end
 
-  it 'should transport bikes to garage' do
+  it 'should transport broken bikes to garage' do
     van.transport(bike)
     expect(van.bike_count).to eq 1
   end
@@ -38,8 +39,5 @@ describe Van do
   #   fill_van van
   #   expect(van.full?).to be true
   # end
-
-
-
 
 end
