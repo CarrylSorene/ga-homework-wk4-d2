@@ -12,16 +12,13 @@ class Van
     @bikes << bike
   end
 
+  def transport bike
+    @bikes.collect bike
+  end
  
-
-
-
-
-
-
-
-
-
+  def full?
+    bike_count == @capacity 
+  end
 
 
 
