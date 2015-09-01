@@ -11,7 +11,7 @@ class Van
     @bikes.count
   end
 
-  def van
+  def van bike
     raise 'Van is full' if full?
     @bikes << bike
   end
