@@ -1,19 +1,13 @@
 require_relative 'spec_helper'
 
-describe Van do
+describe Van do #check that it only takes broken bikes? 
 
-  def fill_van van
+  def fill_van van #need to check for reaching capacity and not accepting a bike if full
     5.times { van(Bike.new) }
   end
 
-  let(:van) { Van.new capacity: 5 }
+  let(:van) { Van.new capacity: 5 } 
   let(:bike) { Bike.new }
-
-  # it 'should accept broken bikes' do
-  #   broken_bike = Bike.new
-  #   van(broken_bike)
-  #   expect(van.broken_bikes).to eq [broken_bike]
-  # end
 
   it 'should transport broken bikes to garage' do
     van.transport(bike)
@@ -34,15 +28,5 @@ describe Van do
     van.release(bike)
     expect(van.bike_count).to eq 0
   end
-
-  # it 'should know when it has reached capacity' do
-  #   fill_van van
-  #   expect(van.full?).to be true
-  # end
-
-  # it 'should not accept a bike if it\'s full' do
-  #   fill_van van
-  #   expect{van(bike)}.to raise_error RuntimeError
-  # end
 
 end
